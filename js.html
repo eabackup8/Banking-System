@@ -1,0 +1,97 @@
+ <script>
+function addo(v){
+if(document.getElementById('hida').value==""
+  ||document.getElementById('fullname').value==""){
+document.getElementById('info').innerHTML ="Something is wrong!";
+myin();
+}else{
+document.getElementById('info').innerHTML ="Submitting...";
+document.getElementById('pp1').style.display='none';
+document.getElementById('info').className = "show";
+google.script.run.withFailureHandler(failure)
+                     .withSuccessHandler(inf1)
+                     .addholder(v);}};
+function wito(v){
+document.getElementById('info').innerHTML ="Making withdraw...";
+document.getElementById('pp2').style.display='none';
+document.getElementById('info').className = "show";
+google.script.run.withFailureHandler(failure)
+                     .withSuccessHandler(inf1)
+                     .withdraw(v);}
+function depo(v){
+document.getElementById('info').innerHTML ="Making deposit...";
+document.getElementById('pp3').style.display='none';
+document.getElementById('info').className = "show";
+google.script.run.withFailureHandler(failure)
+                     .withSuccessHandler(inf1)
+                     .deposit(v);}
+
+function inf1(x){
+document.getElementById('info').innerHTML = x;
+document.getElementById('lab').reset();
+tg();myin();}
+function failure(x){
+document.getElementById('info').innerHTML = x;
+document.getElementById('lab').reset();
+tg();myin();}
+function myin(){
+  var x = document.getElementById("info");
+  x.className = "show";
+  setTimeout(function(){
+  x.className = x.className.replace("show", "");},2000);
+}
+  </script>
+
+       
+<script>
+function tg(){
+document.getElementById('irefresh').classList.add('fa-spin');
+google.script.run.withSuccessHandler(showData).tget();};
+function showData(data){
+document.getElementById('itable').innerHTML =data;
+document.getElementById('irefresh').classList.remove('fa-spin');
+var table = document.getElementById("tabl");
+ var pids = '<option value=""hidden>SELECT HOLDER ID</option>';
+ for (var i = 1; i < table.rows.length; i++) {
+ pids += "<option>" +table.rows[i].cells[1].innerText+ "</option>";}
+ document.getElementById("sel1").innerHTML = pids;
+ document.getElementById("sel2").innerHTML = pids;
+} 
+</script>
+<script>
+function searchTable(){
+    var input, filter, found, table, tr, td, i, j;
+    input = document.getElementById("sinput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tabl");
+    tr = table.getElementsByTagName("tr");
+    for (i = 1; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                found = true;
+            }
+        }
+        if (found) {
+            tr[i].style.display = "";
+            found = false;
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+</script>
+<script>
+function dep(){
+document.getElementById('pp3').style.display='block';  
+}
+function wit(){
+document.getElementById('pp2').style.display='block';  
+}
+function adh(){
+document.getElementById('pp1').style.display='block';  
+}
+function lowerCase(elem){
+var temp = elem.value;
+elem.value = temp.toLowerCase();}; 
+  </script>
