@@ -1,0 +1,27 @@
+<div class="w3-modal"id="pp3">
+<div class="w3-modal-content">
+<form id="lab" onsubmit="event.preventDefault();depo(this)">
+<div class="w3-row-padding w3-light-grey">
+<div class="w3-col s12">
+<select class="w3-select"onChange="onPidSel()"id="sel1"name="hid">
+<option>SELECT HOLDER ID:*</option></select>
+</div>
+<div class="w3-col s12">
+ <lavel>Enter Deposit Amount:*</lavel>
+ <input type="number"name="damount"class="w3-input w3-border">
+ </div>
+<div class="w3-col s12">
+<lavel>Note:</lavel>
+<textarea name="note"class="w3-input w3-border"onkeyup="lowerCase(this)"></textarea>
+<input type="submit" onclick="depo(this)"class="w3-hide"id="depoo">
+</div>
+</div>
+</form> 
+<div class="w3-col s12 w3-padding w3-middle"style="margin-left:40px;">
+<input type="submit" onclick="document.getElementById('depoo').click();"class="w3-button w3-green w3-col s4"value="Deposit">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="document.getElementById('pp3').style.display='none'"class="w3-button w3-red w3-col s4 w3-padding"style="margin-left:10px;">
+Close</button>
+</div>
+</div>
+</div>
