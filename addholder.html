@@ -1,0 +1,35 @@
+<div class="w3-modal"id="pp1">
+<div class="w3-modal-content">
+<fieldset class="w3-border-teal">
+<legend>Holder Detail:</legend>
+<form id="lab" onsubmit="event.preventDefault();addo(this)">
+<div class="w3-row-padding w3-light-grey">
+<div class="w3-col s12">
+<lavel>Holder ID:*</lavel>
+<input type="text"name="hid"id="hida"class="w3-input w3-border"required>
+</div>
+<div class="w3-col s12">
+ <lavel>Holder name:*</lavel>
+ <input type="text"name="fullname"id="fullname"class="w3-input w3-border"onkeyup="lowerCase(this)"required>
+ </div>
+
+<div class="w3-col s12">
+<lavel>Mobile Number:</lavel>
+  <input type="tel"name="mob"id="mob"class="w3-input w3-border">
+</div>
+<div class="w3-col s12">
+<lavel>Email ID:</lavel>
+<input type="email"name="email"id="email"class="w3-input w3-border"onkeyup="lowerCase(this)">
+<input type="submit" onclick="addo(this)"class="w3-hide"id="aepoo">
+</div>
+</div>
+</form>
+<div class="w3-col s12 w3-padding w3-middle"style="margin-left:40px;">
+<input type="submit" onclick="document.getElementById('aepoo').click()"class="w3-button w3-green w3-col s4"value="Submit">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="document.getElementById('pp1').style.display='none'"class="w3-button w3-red w3-col s4 w3-padding"style="margin-left:10px;">
+Close</button>
+</div>
+</fieldset> 
+</div>
+</div>
